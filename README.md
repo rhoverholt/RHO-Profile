@@ -24,8 +24,7 @@ Step 1: git clone; Step 2: npm install
 
 npm run build; then npm start.
 
-
-![Here is a screenshot of the application demonstrating it's look and feel](./Assets/screenshot.png)
+![Here is a screenshot of the application demonstrating it's look and feel](./src/imagesweb-development-screen.png)
 
 ## License <a id="license"></a>
 
