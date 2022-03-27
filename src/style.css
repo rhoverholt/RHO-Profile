@@ -63,6 +63,12 @@ button:hover {
   cursor: pointer;
 }
 
+button[disabled]:hover {
+  background-color: var(--title-background);
+  color: var(--title-color);
+  cursor: default;
+}
+
 footer {
   background-color: var(--title-color);
   color: var(--title-background);

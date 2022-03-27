@@ -9,17 +9,28 @@ function Header() {
     return () => setNavPage(destination);
   }
 
+  function getNavButton(clickText, displayText) {
+    if (clickText === navPage)
+      return (
+        <button onClick={clickHandler(`${clickText}`)} disabled>
+          {displayText}
+        </button>
+      );
+
+    return (
+      <button onClick={clickHandler(`${clickText}`)}>{displayText}</button>
+    );
+  }
+
   return (
     <>
       <header>
         <h1 className="header-title">Rich Overholt</h1>
         <nav>
-          <button onClick={clickHandler("home")}>Home</button>
-          <button onClick={clickHandler("about-me")}>About Me</button>
-          <button onClick={clickHandler("recent-projects")}>
-            Recent Projects
-          </button>
-          <button onClick={clickHandler("contact-me")}>Contact Me</button>
+          {getNavButton("home", "All")}
+          {getNavButton("about-me", "About Me")}
+          {getNavButton("recent-projects", "Recent Projects")}
+          {getNavButton("contact-me", "Contact Me")}
         </nav>
       </header>
       <main>
@@ -28,7 +39,6 @@ function Header() {
           <div className="banner-end">Hello World.</div>
           <h1>Computer programmer</h1>
         </div>
-        {/* */}
         {navPage === "about-me" ? (
           <Components.AboutMe />
         ) : navPage === "recent-projects" ? (

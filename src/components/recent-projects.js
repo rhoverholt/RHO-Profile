@@ -7,13 +7,14 @@ function Project(link, title, pic, gitLink) {
   return { link, title, pic, gitLink };
 }
 
+const firstProject = Project(
+  "https://rhoverholt.github.io/TicTacToe/",
+  "Tic Tac Toe",
+  tictactoePic,
+  "https://github.com/rhoverholt/TicTacToe"
+);
+
 const projectList = [
-  //   Project(
-  //     "https://rhoverholt.github.io/TicTacToe/",
-  //     "Tic Tac Toe",
-  //     tictactoePic,
-  //     "https://github.com/rhoverholt/TicTacToe"
-  //   ),
   Project(
     "https://rhoverholt-tech-blog-mvc.herokuapp.com/",
     "Tech Blog",
@@ -54,22 +55,8 @@ function RecentProjects() {
   return (
     <section id="work">
       <h1 className="section-title">Recent Projects</h1>
-
       <div className="section-details">
-        <div className="first-project">
-          <div className="project">
-            <a
-              className="no-line"
-              href="https://rhoverholt.github.io/TicTacToe/"
-            >
-              <h1>Tic Tac Toe - dynamic</h1>
-              <img src={tictactoePic} alt="Tic Tac Toe Game" />
-            </a>
-          </div>
-          <a className="my-link" href="https://github.com/rhoverholt/TicTacToe">
-            Github Repository - Tic Tac Toe
-          </a>
-        </div>
+        <div className="first-project">{projectComponent(firstProject)}</div>
         <div className="other-projects">
           {projectList.map(projectComponent)}
         </div>
